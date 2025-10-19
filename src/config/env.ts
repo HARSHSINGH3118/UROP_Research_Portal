@@ -12,6 +12,7 @@ export const env = {
   port: Number(process.env.PORT ?? 8080),
   clientOrigin: required("CLIENT_ORIGIN", "http://localhost:3000"),
   mongoUri: required("MONGO_URI", "mongodb://127.0.0.1:27017/urop"),
+  openaiKey: required("OPENAI_API_KEY", ""),
   jwt: {
     accessSecret: required("JWT_ACCESS_SECRET", "dev-access"),
     accessExpires: required("JWT_ACCESS_EXPIRES", "15m"),
