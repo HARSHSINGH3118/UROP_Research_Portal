@@ -10,7 +10,9 @@ import { paperRouter } from "./routes/paper.route";
 import { reviewRouter } from "./routes/review.route";
 import { eventRouter } from "./routes/event.route";
 import { adminRouter } from "./routes/admin.route";
+import { debugRouter } from "./routes/debug.route";
 import path from "path";
+
 
 export const createApp = () => {
   const app = express();
@@ -29,6 +31,7 @@ export const createApp = () => {
   app.use("/api/reviews", reviewRouter);
   app.use("/api/events", eventRouter);
   app.use("/api/admin", adminRouter);
+  app.use("/api/debug", debugRouter);
 
   // 404
   app.use((_req, res) => {

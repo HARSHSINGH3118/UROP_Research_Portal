@@ -11,6 +11,11 @@ async function main() {
     const app = createApp();
     app.listen(env.port, () => {
       logger.info(`Server listening on http://localhost:${env.port}`);
+
+      // Start cron jobs once the server is up
+      import("./utils/cron")
+        .then(() => logger.info("⏰ Cron jobs initialized"))
+        .catch((err) => logger.error({ err }, "Failed to start cron jobs"));
     });
   } catch (err) {
     logger.error({ err }, "Startup error");
